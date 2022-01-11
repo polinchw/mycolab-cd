@@ -1,6 +1,6 @@
 apiVersion: v2
-name: hello-github-webhook
-description: A Helm chart hello-github-webhook
+name: genbank
+description: A Helm chart genbank
 
 # A chart can be either an 'application' or a 'library' chart.
 #

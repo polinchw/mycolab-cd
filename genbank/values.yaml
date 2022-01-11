@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: polinchw/hello-github-webhook
+  repository: us-west2-docker.pkg.dev/micro-shoreline-333018/images/genbank:latest
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: 0.1.10

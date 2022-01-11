@@ -1,7 +1,7 @@
 helm:
   parameters:
   - name: image.name
-    value: polinchw/hello-github-webhook
+    value: mycolab/genbank
     forcestring: true
   - name: image.tag
     value: 3.1.1

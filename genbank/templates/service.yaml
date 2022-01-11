@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "hello-github-webhook.fullname" . }}
+  name: {{ include "genbank.fullname" . }}
   labels:
-    {{- include "hello-github-webhook.labels" . | nindent 4 }}
+    {{- include "genbank.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "hello-github-webhook.selectorLabels" . | nindent 4 }}
+    {{- include "genbank.selectorLabels" . | nindent 4 }}
