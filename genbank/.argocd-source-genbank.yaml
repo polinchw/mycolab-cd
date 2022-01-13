@@ -4,5 +4,5 @@ helm:
     value: mycolab/genbank
     forcestring: true
   - name: image.tag
-    value: 0.3.0
+    value: 0.3.1
     forcestring: true
