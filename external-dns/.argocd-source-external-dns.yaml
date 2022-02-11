@@ -1,0 +1,8 @@
+helm:
+  parameters:
+  - name: image.name
+    value: k8s.gcr.io/external-dns/external-dns
+    forcestring: true
+  - name: image.tag
+    value: v0.8.0
+    forcestring: true

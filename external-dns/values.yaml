@@ -1,0 +1,16 @@
+# Default values for hello-github-webhook.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: k8s.gcr.io/external-dns/external-dns
+  pullPolicy: Always
+  tag: v0.8.0
+
+# cloud-provider: google, aws, etc.
+provider: google
+
+# DNS domain
+domain: mycolab.org.
