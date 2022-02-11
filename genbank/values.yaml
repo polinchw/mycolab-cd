@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: us-west2-docker.pkg.dev/micro-shoreline-333018/images/mycolab-ui
+  repository: us-west2-docker.pkg.dev/micro-shoreline-333018/images/genbank
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
