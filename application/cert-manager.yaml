@@ -17,7 +17,8 @@ spec:
       # Extra parameters to set (same as setting through values.yaml, but these take precedence)
       parameters:
       - name: "installCRDs"
-        value: true
+        value: "true"
+          forceString: true
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
