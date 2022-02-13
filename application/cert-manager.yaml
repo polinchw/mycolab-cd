@@ -16,7 +16,7 @@ spec:
     helm:
       # Extra parameters to set (same as setting through values.yaml, but these take precedence)
       parameters:
-        - name: "installCRDs"
+        - name: installCRDs
           value: true
   destination:
     server: 'https://kubernetes.default.svc'
