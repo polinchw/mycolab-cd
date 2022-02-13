@@ -1,0 +1,27 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mycolab-ui
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/git-branch: master
+    argocd-image-updater.argoproj.io/image-list: myalias=us-west2-docker.pkg.dev/micro-shoreline-333018/images/mycolab-ui:~0
+    argocd-image-updater.argoproj.io/myalias.update-strategy: semver
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/mycolab/mycolab-cd.git'
+    path: mycolab-ui
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: mycolab-ui
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: mycolab-cert
+  namespace: mycolab-ui
+spec:
+  dnsNames:
+    - mycolab.org
+  secretName: mycolab-cert-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer

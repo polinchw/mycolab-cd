@@ -1,7 +1,5 @@
 # mycolab-cd
 
-## Description
-
-This project contains a Helm chart for Argo CD to deploy 
-[genbank](https://github.com/mycolab/genbank) to Kubernetes.
+This project contains the charts and manifests used by ArgoCD to deploy the various
+[mycolab](https://github.com/mycolab) services to Kubernetes.
 

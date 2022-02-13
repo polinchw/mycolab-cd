@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "genbank.fullname" . }}
+  name: {{ include "mycolab-ui.fullname" . }}
   labels:
-    {{- include "genbank.labels" . | nindent 4 }}
+    {{- include "mycolab-ui.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "genbank.selectorLabels" . | nindent 6 }}
+      {{- include "mycolab-ui.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "genbank.selectorLabels" . | nindent 8 }}
+        {{- include "mycolab-ui.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "genbank.serviceAccountName" . }}
+      serviceAccountName: {{ include "mycolab-ui.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -35,15 +35,15 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 9090
+              containerPort: 3000
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /v1/openapi.json
+              path: /
               port: http
           readinessProbe:
             httpGet:
-              path: /v1/openapi.json
+              path: /
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
