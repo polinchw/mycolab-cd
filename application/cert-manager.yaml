@@ -13,11 +13,6 @@ spec:
     repoURL: 'https://charts.bitnami.com/bitnami'
     targetRevision: 0.4.5
     chart: cert-manager
-    helm:
-      # Extra parameters to set (same as setting through values.yaml, but these take precedence)
-      parameters:
-        - name: installCRDs
-          value: true
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
